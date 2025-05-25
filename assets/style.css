@@ -1,0 +1,367 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #ffdce4;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #fcd3dc;
+    width: 100%;
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+}
+
+.header h1 {
+    font-size: 22px;
+    color: #7d0d2b;
+    margin: 0;
+}
+
+.main-content {
+    background-color: #ffb6c1;
+    padding: 30px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.illustration1 {
+    width: 300px;
+    margin-bottom: -20px;
+}
+
+h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #4b0c2b;
+}
+
+p {
+    font-size: 18px;
+    color: #4b0c2b;
+    margin: 10px 0;
+}
+
+.button-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn {
+    padding: 12px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.login {
+    background-color: #b75d69;
+    color: white;
+}
+
+.daftar {
+    background-color: #ffe4e9;
+    color: #b75d69;
+    border: 1px solid #b75d69;
+}
+
+.bantuan {
+    background-color: #d3a4a4;
+    color: white;
+    margin-top: 5px;
+    width: 100px;
+    align-self: center; /* ganti dari flex-end atau flex-start jadi center */
+}
+
+.logo {
+    width: 20%;
+    max-width: 50px;
+    height: auto;
+}
+
+
+.illustration {
+    width: 600px; /* Lebih besar */
+    margin-bottom: -25px;
+    margin-top: 10px
+}
+
+<style>
+.card {
+    background-color: #f5b7c2;
+    border: none;
+    border-radius: 20px;
+}
+
+.login-icon {
+    width: 140px;
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    font-weight: bold;
+    color: #5b1a27;
+}
+
+.card p {
+    color: #6b2737;
+    font-size: 16px;
+}
+
+input[type="text"],
+input[type="password"] {
+    border-radius: 30px;
+    border: none;
+    padding: 10px 20px;
+    width: 100%;
+}
+
+.btn-primary {
+    background-color: #b25a69;
+    border: none;
+    border-radius: 30px;
+    padding: 10px;
+}
+
+.btn-primary:hover {
+    background-color: #a24855;
+}
+
+a {
+    color: #6b2737;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+</style>
+
+.dashboard-card {
+    background-color: #ffb6c1; /* warna pink lembut */
+    border-radius: 20px;
+    padding: 40px 30px;
+    max-width: 600px;
+    margin: 30px auto;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+.dashboard-card h2 {
+    font-size: 24px;
+    color: #7d0d2b;
+    margin-bottom: 20px;
+}
+
+.dashboard-card p {
+    font-size: 16px;
+    color: #4b0c2b;
+    margin-bottom: 20px;
+}
+
+.dashboard-card .btn {
+    margin-top: 15px;
+}
+
+.main-card {
+    background-color: #ffb6c1; /* Warna pink pastel */
+    border-radius: 30px;
+    padding: 40px 30px;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+    text-align: center;
+}
+
+.text-box {
+    background-color: #fcd3dc; /* Warna kotak bagian dalam */
+    border-radius: 22px;
+    padding: 27px 22px;
+    margin-top: 17px;
+    margin-bottom: 17px;
+}
+
+.text-box h2 {
+    font-size: 22px;
+    font-weight: bold;
+    color: #4b0c2b;
+    margin-bottom: 15px;
+}
+
+.text-box p {
+    font-size: 18px;
+    color: #4b0c2b;
+    margin-bottom: 20px;
+}
+
+.button-row {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.profile {
+    margin-right: 10px;
+    text-align: center;
+}
+
+.profile img {
+    height: 35px;
+    border-radius: 50%;
+}
+
+.profile div {
+    font-size: 12px;
+    color: white;
+}
+
+.container img {
+    width: 200px;
+    margin: 20px 0;
+}
+
+form input[type="text"] {
+    width: 280px;
+    padding: 10px 20px;
+    margin: 10px auto;
+    border: none;
+    border-radius: 25px;
+    background-color: #d98a96;
+    color: #4b0c2b;
+    font-size: 16px;
+    display: block;
+    text-align: left;
+}
+
+form input::placeholder {
+    color: #4b0c2b;
+}
+
+button {
+    background-color: #bb6c75;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 30px;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+button:hover {
+    background-color: #a55963;
+}
+
+.top-bar {
+    position: relative;
+    height: 60px;
+    background-color: #d49fa4; /* Warna background top */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.profile {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.profile-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #d9d9d9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.input-wrapper {
+    position: relative;
+    width: 300px;
+}
+
+.input-wrapper input {
+    width: 100%;
+    padding: 12px 40px 12px 16px;
+    border: none;
+    border-radius: 30px;
+    background-color: #bb6c75;
+    color: white;
+    font-size: 14px;
+}
+
+.input-wrapper input::placeholder {
+    color: white;
+    opacity: 1;
+}
+
+.input-wrapper::after {
+    content: "⌄";
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    pointer-events: none;
+}
+
+.form-wilayah {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    gap: 25px; /* spasi antar kotak */
+}
+
+img {
+    max-width: 200px;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+}
+
+.kirim {
+    background-color: #4b0c2b;
+    color: #6b2737;
+    margin-top: 5px;
+    width: 100px;
+    align-self: center; /* ganti dari flex-end atau flex-start jadi center */
+}
+
+
+
