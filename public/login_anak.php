@@ -6,18 +6,17 @@ session_start();
 $error = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $nama = $_POST['nama_anak'];
     $nik = $_POST['nik'] ?? '';
     $password = $_POST['password'] ?? '';
-
+    
     if (!empty($nik) && !empty($password)) {
-        $anak = Anak::getByNIK($nik);
+      $anak = Anak::getByNIK($nik);
 
         if ($anak) {
-            $storedPassword = $anak['password'];
+            $storedPassword = $anak['Password'];
 
-            if (password_verify($password, $storedPassword) || $password === $storedPassword) {
-                $_SESSION['nik'] = $anak['nik'];
+            if (password_verify($password, $storedPassword) || $password == $storedPassword) {
+                $_SESSION['nik'] = $anak['NIK'];
                 $_SESSION['nama_anak'] = $anak['Nama_Anak'];
                 header('Location: ajukan_laporan.php');
                 exit;
@@ -155,7 +154,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <p>Pastikan Nama dan NIK yang kamu masukkan sesuai dengan biodata yang didaftarkan sebelumnya</p>
 
   <form method="post">
-    <input type="text" name="nama" placeholder="Nama" required>
+    <input type="text" name="nama_anak" placeholder="Nama" required>
     <input type="text" name="nik" placeholder="NIK" required>
     <input type="password" name="password" placeholder="Kata Sandi" required>
     <button type="submit" class="btn">Masuk</button>

@@ -2,17 +2,20 @@
 session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $spesifikasi = $_POST['spesifikasi'];
-    $_SESSION['jenis_spesifik'] = $_POST['jenis_spesifik'];
-    $_SESSION['deskripsi_laporan'] = $_POST['deskripsi'];
-    $_SESSION['lampiran'] = $_FILES['lampiran']['name']; // kalau pakai file
+    $spesifikasi = $_POST['spesifikasi'] ?? '';
+    $spesifikasi_lain = $_POST['spesifikasi_lain'] ?? '';
+    $jenis_spesifik = $_POST['jenis_spesifik'] ?? '';
+    $deskripsi = $_POST['deskripsi'] ?? '';
+    $lampiran = $_FILES['lampiran']['name'] ?? '';
 
-    
-    if ($spesifikasi === 'Lainnya' && !empty($_POST['spesifikasi_lain'])) {
-        $_SESSION['spesifikasi_masalah'] = $_POST['spesifikasi_lain'];
-    } else {
-        $_SESSION['spesifikasi_masalah'] = $spesifikasi;
-    }
+    $_SESSION['jenis_spesifik'] = $jenis_spesifik;
+    $_SESSION['deskripsi_laporan'] = $deskripsi;
+    $_SESSION['lampiran'] = $lampiran;
+
+    // Simpan spesifikasi ke session
+    $_SESSION['spesifikasi_masalah'] = ($spesifikasi === 'Lainnya' && !empty($spesifikasi_lain))
+        ? $spesifikasi_lain
+        : $spesifikasi;
 
     header("Location: ../public/wilayah.php");
     exit();
@@ -68,7 +71,7 @@ switch ($kategori) {
 
 <h2>Spesifikasi Masalah: <?= htmlspecialchars($kategori) ?></h2>
 
-<form method="POST" action="wilayah.php">
+<form method="POST">
     <label for="spesifikasi">Spesifikasi Masalah:</label>
     <select name="spesifikasi" id="spesifikasi" onchange="toggleLainnya()" required>
         <option value="">-- Pilih Spesifikasi --</option>
@@ -85,18 +88,6 @@ switch ($kategori) {
 
     <br>
     <button type="submit">Lanjut</button>
-    <?php
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $spesifikasi = $_POST['spesifikasi'];
-        $spesifikasi_lain = $_POST['spesifikasi_lain'] ?? '';
-
-        $_SESSION['spesifikasi_masalah'] = $spesifikasi === 'Lainnya' ? $spesifikasi_lain : $spesifikasi;
-
-        // redirect ke form wilayah
-        header("Location: wilayah.php");
-        exit();
-    }
-?>
 </form>
 
 <script>

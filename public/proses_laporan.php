@@ -15,10 +15,10 @@ if (!$conn) {
 // Ambil data dari session
 $tanggal       = $_SESSION['tanggal_laporan'];
 $jenis_masalah = $_SESSION['jenis_masalah'];
-$jenis_spesifik = $_SESSION['jenis_spesifik'];
+$jenis_spesifik = $_SESSION['jenis_spesifik']; 
 $lampiran       = $_SESSION['lampiran'] ?? null;
-$deskripsi      = $_SESSION['deskripsi_laporan'];
-$nik            = $_SESSION['NIK'];
+$deskripsi      = $_SESSION['deskripsi_laporan']; 
+$nik            = $_SESSION['nik']; 
 
 // Simpan ke tabel laporanmasalah
 $id_laporan = LaporanMasalah::buat($nik, $tanggal);
@@ -32,7 +32,7 @@ SpesifikasiMasalah::simpan($jenis_spesifik, $deskripsi, $lampiran);
 
 
 // Kosongkan session
-session_unset();
+unset($_SESSION['tanggal_laporan'], $_SESSION['jenis_masalah'], $_SESSION['jenis_spesifik'], $_SESSION['lampiran'], $_SESSION['deskripsi_laporan']);
 header("Location: dashboard_anak.php");
 exit;
 
